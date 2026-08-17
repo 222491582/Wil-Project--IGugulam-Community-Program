@@ -1,18 +1,25 @@
-# iGugulam Frontend - Assigned Pages
+# iGugulam Community Program
 
-This folder contains the four frontend prototype pages:
-- Study Resources
-- Manage Study Resources
-- Manage Homework
-- Manage Contact Requests
+This project is a web-based system for the iGugulam Community Program.
 
-## Run
-Open `study-resources.html` in a browser. Use the sidebar to navigate between the pages.
+## Features
 
-The pages use shared CSS and JavaScript. The current buttons are prototype interactions and can later be connected to the Spring Boot REST API and MySQL database.
+- User management
+- Study resources
+- Homework
+- Announcements
+- Contact requests
+- User profiles
+- Admin functions
 
-## Structure
-- `*.html` - pages
-- `css/style.css` - shared styling
-- `js/script.js` - prototype interactions
-- `images/logo.png` - iGugulam logo
+## Technologies
+
+- HTML
+- CSS
+- JavaScript
+- Java Spring Boot
+- MySQL
+
+## Team
+
+This project was developed as a group project.
