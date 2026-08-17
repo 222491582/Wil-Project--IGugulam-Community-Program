@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iGugulam - Manage Homework</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <img class="logo" src="images/logo.png" alt="iGugulam Community Programme logo">
+    <button class="logout" data-demo="Logout is ready to be connected to the Spring Boot authentication later.">Log out</button>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+<nav class="nav">
+  <a href="study-resources.html" class=""><span class="nav-icon">⌂</span>Dashboard</a>
+  <a href="manage-users.html" class=""><span class="nav-icon">♙</span>Manage Users</a>
+  <a href="study-resources.html" class=""><span class="nav-icon">▢</span>Study Resources</a>
+  <a href="manage-homework.html" class="active"><span class="nav-icon">▤</span>Homework</a>
+  <a href="announcements.html" class=""><span class="nav-icon">⚑</span>Announcements</a>
+  <a href="manage-contact-requests.html" class=""><span class="nav-icon">✉</span>Contact Requests</a>
+  <a href="admin-profile.html" class=""><span class="nav-icon">♙</span>Profile</a>
+  <div class="nav-divider"></div>
+  <a href="#" data-demo="Logout is ready to be connected to the Spring Boot authentication later."><span class="nav-icon">↪</span>Logout</a>
+</nav>
+</aside>
+    <main class="content">
+<h1 style="font-size:22px;margin-bottom:18px;">Manage Homework <small style="float:right;font-size:13px;font-weight:400;">♟ Admin User ▾</small></h1>
+<section class="panel">
+  <div class="panel-header">
+    <span>Homework List</span>
+    <button class="add-btn" data-open-modal>+ Add Homework</button>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Homework Title</th><th>Due Date</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr data-search-row><td>Homework Title</td><td>DD/MM/YYYY</td><td><button class="action-btn" data-demo="Edit homework">Edit</button></td></tr>
+        <tr data-search-row><td>Homework Title</td><td>DD/MM/YYYY</td><td><button class="action-btn" data-demo="Edit homework">Edit</button></td></tr>
+        <tr data-search-row><td>Homework Title</td><td>DD/MM/YYYY</td><td><button class="action-btn" data-demo="Edit homework">Edit</button></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<div class="modal-backdrop">
+  <div class="modal">
+    <button class="close-btn" data-close-modal>×</button>
+    <h2>Add Homework</h2>
+    <div class="field"><label>Homework Title</label><input placeholder="Homework Title"></div>
+    <br>
+    <div class="field"><label>Due Date</label><input placeholder="DD/MM/YYYY"></div>
+    <br>
+    <div class="field"><label>Description</label><textarea placeholder="Homework Description"></textarea></div>
+    <br>
+    <button class="add-btn" data-demo="Homework form submitted (prototype only)">Save Homework</button>
+  </div>
+</div>
+</main>
+  </div>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>
