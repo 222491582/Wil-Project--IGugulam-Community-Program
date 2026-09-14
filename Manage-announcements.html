@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>iGugulam - Manage Announcements</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<!-- =========================
+     SIDEBAR
+     ========================= -->
+
+<div class="sidebar">
+
+    <div class="logo">
+
+        <h2>iGugulam</h2>
+
+        <p>Admin Panel</p>
+
+    </div>
+
+
+    <nav>
+
+        <a href="dashboard.html">
+            🏠 Dashboard
+        </a>
+
+        <a href="homework.html">
+            📚 Homework
+        </a>
+
+        <a href="announcements.html">
+            📢 Announcements
+        </a>
+
+        <a href="manage-announcements.html" class="active">
+            📝 Manage Announcements
+        </a>
+
+        <a href="#">
+            👥 Manage Users
+        </a>
+
+        <a href="#">
+            📚 Manage Resources
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <a href="#">
+            ⚙️ Settings
+        </a>
+
+        <a href="#">
+            🚪 Logout
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     MAIN CONTENT
+     ========================= -->
+
+<div class="main-content">
+
+    <!-- TOP BAR -->
+
+    <header class="topbar">
+
+        <div>
+
+            <h4>Manage Announcements</h4>
+
+            <p>
+                Create and manage school announcements
+            </p>
+
+        </div>
+
+
+        <div class="user-area">
+
+            <span class="notification">
+                🔔
+            </span>
+
+
+            <div class="user-info">
+
+                <strong>Administrator</strong>
+
+                <small>
+                    Admin Account
+                </small>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         PAGE CONTENT
+         ========================= -->
+
+    <main class="dashboard-container">
+
+
+        <!-- PAGE HEADER -->
+
+        <div class="manage-header">
+
+            <div>
+
+                <h1>
+                    Announcements
+                </h1>
+
+                <p>
+                    Add, edit and remove announcements.
+                </p>
+
+            </div>
+
+
+            <button
+                    class="primary-btn"
+                    onclick="openAnnouncementForm()">
+
+                + Add Announcement
+
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             SEARCH
+             ========================= -->
+
+        <div class="dashboard-section manage-toolbar">
+
+            <div class="search-box">
+
+                <input
+                        type="text"
+                        id="manageAnnouncementSearch"
+                        placeholder="Search announcements..."
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             ANNOUNCEMENT TABLE
+             ========================= -->
+
+        <div class="dashboard-section table-container">
+
+            <table class="announcement-table">
+
+                <thead>
+
+                <tr>
+
+                    <th>Title</th>
+
+                    <th>Category</th>
+
+                    <th>Date</th>
+
+                    <th>Status</th>
+
+                    <th>Actions</th>
+
+                </tr>
+
+                </thead>
+
+
+                <tbody id="announcementTableBody">
+
+
+                <!-- ROW 1 -->
+
+                <tr>
+
+                    <td>
+                        Important School Meeting
+                    </td>
+
+                    <td>
+                        General
+                    </td>
+
+                    <td>
+                        12 September 2026
+                    </td>
+
+                    <td>
+
+                        <span class="table-status published">
+                            Published
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="table-actions">
+
+                            <button
+                                    class="edit-btn"
+                                    onclick="editAnnouncement(this)">
+
+                                ✏️ Edit
+
+                            </button>
+
+
+                            <button
+                                    class="delete-btn"
+                                    onclick="deleteAnnouncement(this)">
+
+                                🗑️ Delete
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+
+                <!-- ROW 2 -->
+
+                <tr>
+
+                    <td>
+                        Exam Preparation
+                    </td>
+
+                    <td>
+                        Academic
+                    </td>
+
+                    <td>
+                        10 September 2026
+                    </td>
+
+                    <td>
+
+                        <span class="table-status published">
+                            Published
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="table-actions">
+
+                            <button
+                                    class="edit-btn"
+                                    onclick="editAnnouncement(this)">
+
+                                ✏️ Edit
+
+                            </button>
+
+
+                            <button
+                                    class="delete-btn"
+                                    onclick="deleteAnnouncement(this)">
+
+                                🗑️ Delete
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+
+                <!-- ROW 3 -->
+
+                <tr>
+
+                    <td>
+                        School Career Day
+                    </td>
+
+                    <td>
+                        Events
+                    </td>
+
+                    <td>
+                        8 September 2026
+                    </td>
+
+                    <td>
+
+                        <span class="table-status published">
+                            Published
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="table-actions">
+
+                            <button
+                                    class="edit-btn"
+                                    onclick="editAnnouncement(this)">
+
+                                ✏️ Edit
+
+                            </button>
+
+
+                            <button
+                                    class="delete-btn"
+                                    onclick="deleteAnnouncement(this)">
+
+                                🗑️ Delete
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+
+                <!-- ROW 4 -->
+
+                <tr>
+
+                    <td>
+                        New Study Resources
+                    </td>
+
+                    <td>
+                        Resources
+                    </td>
+
+                    <td>
+                        5 September 2026
+                    </td>
+
+                    <td>
+
+                        <span class="table-status published">
+                            Published
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <div class="table-actions">
+
+                            <button
+                                    class="edit-btn"
+                                    onclick="editAnnouncement(this)">
+
+                                ✏️ Edit
+
+                            </button>
+
+
+                            <button
+                                    class="delete-btn"
+                                    onclick="deleteAnnouncement(this)">
+
+                                🗑️ Delete
+
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =========================
+     ADD / EDIT MODAL
+     ========================= -->
+
+<div id="announcementFormModal"
+     class="custom-modal">
+
+
+    <div class="modal-content-custom announcement-form-modal">
+
+
+        <button
+                class="modal-close"
+                onclick="closeAnnouncementForm()">
+
+            &times;
+
+        </button>
+
+
+        <h2 id="announcementFormTitle">
+            Add Announcement
+        </h2>
+
+
+        <p>
+            Enter the announcement information below.
+        </p>
+
+
+        <!-- TITLE -->
+
+        <div class="form-group">
+
+            <label for="announcementTitle">
+                Announcement Title
+            </label>
+
+            <input
+                    type="text"
+                    id="announcementTitle"
+                    placeholder="Enter announcement title">
+
+        </div>
+
+
+        <!-- CATEGORY -->
+
+        <div class="form-group">
+
+            <label for="announcementCategory">
+                Category
+            </label>
+
+            <select id="announcementCategory">
+
+                <option value="General">
+                    General
+                </option>
+
+                <option value="Academic">
+                    Academic
+                </option>
+
+                <option value="Events">
+                    Events
+                </option>
+
+                <option value="Resources">
+                    Resources
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- DATE -->
+
+        <div class="form-group">
+
+            <label for="announcementDate">
+                Date
+            </label>
+
+            <input
+                    type="date"
+                    id="announcementDate">
+
+        </div>
+
+
+        <!-- DESCRIPTION -->
+
+        <div class="form-group">
+
+            <label for="announcementDescription">
+                Description
+            </label>
+
+            <textarea
+                    id="announcementDescription"
+                    rows="5"
+                    placeholder="Enter announcement description"></textarea>
+
+        </div>
+
+
+        <!-- BUTTONS -->
+
+        <div class="form-actions">
+
+            <button
+                    class="secondary-btn"
+                    onclick="closeAnnouncementForm()">
+
+                Cancel
+
+            </button>
+
+
+            <button
+                    class="primary-btn"
+                    onclick="saveAnnouncement()">
+
+                Save Announcement
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

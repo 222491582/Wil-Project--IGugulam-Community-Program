@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>iGugulam - Announcements</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<!-- =========================
+     SIDEBAR
+     ========================= -->
+
+<div class="sidebar">
+
+    <div class="logo">
+        <h2>iGugulam</h2>
+        <p>Learning Platform</p>
+    </div>
+
+    <nav>
+
+        <a href="dashboard.html">
+            🏠 Dashboard
+        </a>
+
+        <a href="homework.html">
+            📚 Homework
+        </a>
+
+        <a href="announcements.html" class="active">
+            📢 Announcements
+        </a>
+
+        <a href="#">
+            📖 Study Resources
+        </a>
+
+        <a href="#">
+            👤 Profile
+        </a>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+
+        <a href="#">
+            ⚙️ Settings
+        </a>
+
+        <a href="#">
+            🚪 Logout
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     MAIN CONTENT
+     ========================= -->
+
+<div class="main-content">
+
+    <!-- TOP BAR -->
+
+    <header class="topbar">
+
+        <div>
+
+            <h4>Announcements</h4>
+
+            <p>
+                Stay updated with the latest school news
+            </p>
+
+        </div>
+
+        <div class="user-area">
+
+            <span class="notification">
+                🔔
+            </span>
+
+            <div class="user-info">
+
+                <strong>Student</strong>
+
+                <small>
+                    Student Account
+                </small>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         ANNOUNCEMENTS CONTENT
+         ========================= -->
+
+    <main class="dashboard-container">
+
+
+        <!-- INTRO -->
+
+        <div class="welcome-card">
+
+            <div>
+
+                <h1>
+                    School Announcements 📢
+                </h1>
+
+                <p>
+                    Keep up with important school news,
+                    events, reminders and updates.
+                </p>
+
+            </div>
+
+            <div class="welcome-icon">
+                📢
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             SEARCH & FILTER
+             ========================= -->
+
+        <div class="dashboard-section announcement-toolbar">
+
+            <div class="search-box">
+
+                <input
+                        type="text"
+                        id="announcementSearch"
+                        placeholder="Search announcements..."
+                >
+
+            </div>
+
+
+            <select id="announcementFilter">
+
+                <option value="all">
+                    All Categories
+                </option>
+
+                <option value="general">
+                    General
+                </option>
+
+                <option value="academic">
+                    Academic
+                </option>
+
+                <option value="events">
+                    Events
+                </option>
+
+                <option value="resources">
+                    Resources
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- =========================
+             ANNOUNCEMENT CARDS
+             ========================= -->
+
+        <div class="announcement-grid">
+
+
+            <!-- ANNOUNCEMENT 1 -->
+
+            <div class="announcement-card"
+                 data-category="general">
+
+                <div class="announcement-card-top">
+
+                    <span class="announcement-category">
+                        General
+                    </span>
+
+                    <span class="announcement-date">
+                        12 September 2026
+                    </span>
+
+                </div>
+
+
+                <div class="announcement-large-icon">
+                    📢
+                </div>
+
+
+                <h3>
+                    Important School Meeting
+                </h3>
+
+
+                <p>
+                    There will be an important school meeting
+                    this Friday. All students are encouraged
+                    to attend.
+                </p>
+
+
+                <button
+                        class="secondary-btn"
+                        onclick="viewAnnouncement(
+                    'Important School Meeting',
+                    'There will be an important school meeting this Friday. All students are encouraged to attend.',
+                    '12 September 2026',
+                    'General'
+                    )">
+
+                    Read More
+
+                </button>
+
+            </div>
+
+
+            <!-- ANNOUNCEMENT 2 -->
+
+            <div class="announcement-card"
+                 data-category="academic">
+
+                <div class="announcement-card-top">
+
+                    <span class="announcement-category">
+                        Academic
+                    </span>
+
+                    <span class="announcement-date">
+                        10 September 2026
+                    </span>
+
+                </div>
+
+
+                <div class="announcement-large-icon">
+                    🎓
+                </div>
+
+
+                <h3>
+                    Exam Preparation
+                </h3>
+
+
+                <p>
+                    Exam preparation materials are now
+                    available. Students are encouraged to
+                    start preparing early.
+                </p>
+
+
+                <button
+                        class="secondary-btn"
+                        onclick="viewAnnouncement(
+                    'Exam Preparation',
+                    'Exam preparation materials are now available. Students are encouraged to start preparing early.',
+                    '10 September 2026',
+                    'Academic'
+                    )">
+
+                    Read More
+
+                </button>
+
+            </div>
+
+
+            <!-- ANNOUNCEMENT 3 -->
+
+            <div class="announcement-card"
+                 data-category="events">
+
+                <div class="announcement-card-top">
+
+                    <span class="announcement-category">
+                        Events
+                    </span>
+
+                    <span class="announcement-date">
+                        8 September 2026
+                    </span>
+
+                </div>
+
+
+                <div class="announcement-large-icon">
+                    🎉
+                </div>
+
+
+                <h3>
+                    School Career Day
+                </h3>
+
+
+                <p>
+                    Students are invited to attend our
+                    upcoming Career Day and interact with
+                    different professionals.
+                </p>
+
+
+                <button
+                        class="secondary-btn"
+                        onclick="viewAnnouncement(
+                    'School Career Day',
+                    'Students are invited to attend our upcoming Career Day and interact with different professionals.',
+                    '8 September 2026',
+                    'Events'
+                    )">
+
+                    Read More
+
+                </button>
+
+            </div>
+
+
+            <!-- ANNOUNCEMENT 4 -->
+
+            <div class="announcement-card"
+                 data-category="resources">
+
+                <div class="announcement-card-top">
+
+                    <span class="announcement-category">
+                        Resources
+                    </span>
+
+                    <span class="announcement-date">
+                        5 September 2026
+                    </span>
+
+                </div>
+
+
+                <div class="announcement-large-icon">
+                    📚
+                </div>
+
+
+                <h3>
+                    New Study Resources
+                </h3>
+
+
+                <p>
+                    New study resources have been added
+                    to the learning platform for students
+                    to access.
+                </p>
+
+
+                <button
+                        class="secondary-btn"
+                        onclick="viewAnnouncement(
+                    'New Study Resources',
+                    'New study resources have been added to the learning platform for students to access.',
+                    '5 September 2026',
+                    'Resources'
+                    )">
+
+                    Read More
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =========================
+     ANNOUNCEMENT MODAL
+     ========================= -->
+
+<div id="announcementModal"
+     class="custom-modal">
+
+    <div class="modal-content-custom">
+
+        <button
+                class="modal-close"
+                onclick="closeAnnouncementModal()">
+
+            &times;
+
+        </button>
+
+
+        <span
+                id="modalAnnouncementCategory"
+                class="announcement-category">
+
+            General
+
+        </span>
+
+
+        <h2 id="modalAnnouncementTitle">
+            Announcement
+        </h2>
+
+
+        <p id="modalAnnouncementDescription">
+        </p>
+
+
+        <div class="modal-due-date">
+
+            📅 Published:
+
+            <strong id="modalAnnouncementDate">
+            </strong>
+
+        </div>
+
+
+        <button
+                class="primary-btn"
+                onclick="closeAnnouncementModal()">
+
+            Close
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
