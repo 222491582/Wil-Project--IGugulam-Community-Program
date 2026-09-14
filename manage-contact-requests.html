@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iGugulam - Manage Contact Requests</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <img class="logo" src="images/logo.png" alt="iGugulam Community Programme logo">
+    <button class="logout" data-demo="Logout is ready to be connected to the Spring Boot authentication later.">Log out</button>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+<nav class="nav">
+  <a href="study-resources.html" class=""><span class="nav-icon">⌂</span>Dashboard</a>
+  <a href="manage-users.html" class=""><span class="nav-icon">♙</span>Manage Users</a>
+  <a href="study-resources.html" class=""><span class="nav-icon">▢</span>Study Resources</a>
+  <a href="manage-homework.html" class=""><span class="nav-icon">▤</span>Homework</a>
+  <a href="announcements.html" class=""><span class="nav-icon">⚑</span>Announcements</a>
+  <a href="manage-contact-requests.html" class="active"><span class="nav-icon">✉</span>Contact Requests</a>
+  <a href="admin-profile.html" class=""><span class="nav-icon">♙</span>Profile</a>
+  <div class="nav-divider"></div>
+  <a href="#" data-demo="Logout is ready to be connected to the Spring Boot authentication later."><span class="nav-icon">↪</span>Logout</a>
+</nav>
+</aside>
+    <main class="content">
+<h1 style="font-size:22px;margin-bottom:18px;">Manage Contact Requests <small style="float:right;font-size:13px;font-weight:400;">♟ Admin User ▾</small></h1>
+<div class="search" style="height:48px;margin-bottom:14px;width:100%;">
+  <span class="search-icon" style="font-size:23px;">⌕</span>
+  <input data-search placeholder="Search by name, email or subject..." aria-label="Search contact requests">
+</div>
+<section class="panel">
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Name</th><th>Subject</th><th>Status</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr data-search-row><td>Full Name</td><td>Subject</td><td>New</td><td><button class="action-btn reply" data-demo="Reply to contact request">Reply</button></td></tr>
+        <tr data-search-row><td>Full Name</td><td>Subject</td><td>Read</td><td><button class="action-btn" data-demo="View contact request">View</button></td></tr>
+        <tr data-search-row><td>Full Name</td><td>Subject</td><td>Replied</td><td><button class="action-btn reply" data-demo="View reply">Reply</button></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="pagination">
+    <span>Showing 1 to 3 of 27 messages</span>
+    <div class="page-buttons">
+      <button>‹</button><button class="active">1</button><button>2</button><button>3</button><button>›</button>
+    </div>
+  </div>
+</section>
+</main>
+  </div>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>

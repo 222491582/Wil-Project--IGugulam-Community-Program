@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>iGugulam — Business Model Canvas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red: #450A0A;
+    --red-deep: #2C0606;
+    --orange: #FFEDD5;
+    --taupe: #764B36;
+    --ink: #2B1810;
+    --ink-soft: #6b5142;
+    --sticky-r: #E9D2D2;
+    --sticky-o: #FFEDD5;
+    --sticky-t: #E4D3C8;
+    --border: #ecdfd2;
+  }
+  *{ box-sizing: border-box; }
+  body{
+    margin:0; font-family:"Inter", sans-serif; color: var(--ink);
+    background: #FFF9F0;
+    padding: 28px;
+  }
+  .sheet{
+    max-width: 1180px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 34px 34px 30px;
+    box-shadow: 0 1px 3px rgba(69,10,10,0.05);
+  }
+  h1{
+    text-align:center;
+    font-size: 32px;
+    font-weight: 800;
+    margin: 4px 0 4px;
+    color: var(--red);
+  }
+  .subtitle{
+    text-align:center;
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin: 0 0 18px;
+    font-weight: 500;
+  }
+  .evidence{
+    max-width: 880px;
+    margin: 0 auto 26px;
+    background: var(--orange);
+    border: 1px solid #f2dcb8;
+    border-radius: 10px;
+    padding: 12px 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #5c4321;
+    line-height: 1.6;
+  }
+  .evidence strong{ color: var(--red); }
+
+  .canvas{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto auto;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .block{
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+  }
+  .block-head{
+    background: var(--red);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .03em;
+    text-align: center;
+    padding: 8px 6px;
+  }
+  .block-body{
+    padding: 12px 13px 14px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .q{
+    font-size: 11px;
+    color: var(--taupe);
+    font-weight: 700;
+    margin: 0 0 8px;
+    line-height: 1.4;
+  }
+  .block-body ul{
+    margin: 0 0 10px;
+    padding-left: 15px;
+    font-size: 11.5px;
+    line-height: 1.65;
+  }
+  .block-body ul li{ margin-bottom: 1px; }
+
+  .stickies{
+    margin-top: auto;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    padding-top: 6px;
+  }
+  .sticky{
+    flex: 1 1 60px;
+    min-width: 56px;
+    border-radius: 4px;
+    padding: 6px 7px;
+    font-size: 9.5px;
+    line-height: 1.35;
+    font-weight: 600;
+  }
+  .sticky.b{ background: var(--sticky-r); color: var(--red); }
+  .sticky.y{ background: var(--sticky-o); color: #7a4f10; }
+  .sticky.g{ background: var(--sticky-t); color: var(--taupe); }
+
+  .kp{ grid-column: 1; grid-row: 1 / 3; }
+  .ka{ grid-column: 2; grid-row: 1; }
+  .kr{ grid-column: 2; grid-row: 2; }
+  .vp{ grid-column: 3; grid-row: 1 / 3; }
+  .cr{ grid-column: 4; grid-row: 1; }
+  .ch{ grid-column: 4; grid-row: 2; }
+  .cs{ grid-column: 5; grid-row: 1 / 3; }
+
+  .bottom-row{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .bottom-row .block-body{ flex-direction: row; gap: 22px; }
+  .bottom-row .block-body .col{ flex:1; display:flex; flex-direction:column; }
+  .bottom-row .stickies{ margin-top: 8px; }
+
+  .vp .block-body{ background: #FFFBF5; }
+
+  footer{
+    text-align:center;
+    font-size: 10.5px;
+    color: var(--ink-soft);
+    margin-top: 22px;
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+  <h1>Business Model Canvas</h1>
+  <p class="subtitle">iGugulam Community Program — After-School Homework Support, Gugulethu</p>
+
+  <div class="evidence">
+    <strong>Why this model:</strong> a 27-parent survey found 96% have a school-going child,
+    over 80% only get home between 3–7pm, 37% of children spend that time with family/relatives
+    and 33% are home alone — while 70% of parents said they'd be <strong>"very interested"</strong>
+    in an after-school programme like this in Gugulethu.
+  </div>
+
+  <div class="canvas">
+
+    <div class="block kp">
+      <div class="block-head">KEY PARTNERS</div>
+      <div class="block-body">
+        <p class="q">Who are your key partners?</p>
+        <ul>
+          <li>Local primary &amp; high schools</li>
+          <li>Community-based organisations &amp; NGOs</li>
+          <li>Volunteer tutors &amp; mentors</li>
+          <li>Local businesses &amp; donors</li>
+          <li>Western Cape Dept. of Education</li>
+        </ul>
+        <div class="stickies">
+          <div class="sticky b">School liaisons for referrals</div>
+          <div class="sticky y">Corporate CSI sponsors</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block ka">
+      <div class="block-head">KEY ACTIVITIES</div>
+      <div class="block-body">
+        <p class="q">What activities are essential?</p>
+        <ul>
+          <li>Homework support &amp; tutoring</li>
+          <li>Mentorship sessions</li>
+          <li>Learner registration &amp; tracking (via website)</li>
+          <li>Resource development &amp; updates</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="block kr">
+      <div class="block-head">KEY RESOURCES</div>
+      <div class="block-body">
+        <p class="q">What resources do you need?</p>
+        <ul>
+          <li>Facilitators &amp; mentors (Human)</li>
+          <li>Donations &amp; grants (Financial)</li>
+          <li>Curriculum know-how (Intellectual)</li>
+        </ul>
+        <div class="stickies">
+          <div class="sticky b">Safe centre space</div>
+          <div class="sticky y">HTML/CSS/JS · Java · MySQL</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block vp">
+      <div class="block-head">VALUE PROPOSITION</div>
+      <div class="block-body">
+        <p class="q">What value do you deliver?</p>
+        <ul>
+          <li>Safe, supervised space after school</li>
+          <li>Improved academic performance</li>
+          <li>Confidence &amp; positive study habits</li>
+          <li>Peace of mind for working parents</li>
+        </ul>
+        <div class="stickies">
+          <div class="sticky g">Free / low-cost access</div>
+          <div class="sticky b">70% survey "very interested"</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block cr">
+      <div class="block-head">CUSTOMER RELATIONSHIPS</div>
+      <div class="block-body">
+        <p class="q">How do you interact with customers?</p>
+        <ul>
+          <li>1:1 mentorship from caring facilitators</li>
+          <li>Progress updates via the website</li>
+          <li>Word-of-mouth trust in community</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="block ch">
+      <div class="block-head">CHANNELS</div>
+      <div class="block-body">
+        <p class="q">How do you reach customers?</p>
+        <ul>
+          <li>iGugulam website</li>
+          <li>Social media</li>
+          <li>School flyers &amp; word of mouth</li>
+        </ul>
+        <div class="stickies">
+          <div class="sticky y">Community events</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block cs">
+      <div class="block-head">CUSTOMER SEGMENTS</div>
+      <div class="block-body">
+        <p class="q">Who are your customers?</p>
+        <ul>
+          <li>Primary &amp; high school learners in Gugulethu</li>
+          <li>Working parents &amp; guardians</li>
+          <li>Community members &amp; supporters</li>
+        </ul>
+        <div class="stickies">
+          <div class="sticky g">Grades 1–12</div>
+          <div class="sticky b">33% currently home alone after school</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="bottom-row">
+    <div class="block">
+      <div class="block-head">COST STRUCTURE</div>
+      <div class="block-body">
+        <div class="col">
+          <p class="q">What are your main costs?</p>
+          <ul>
+            <li>Facilitator &amp; tutor stipends (Fixed)</li>
+            <li>Centre rent &amp; utilities (Fixed)</li>
+            <li>Study materials &amp; stationery (Variable)</li>
+            <li>Website hosting &amp; maintenance (Fixed)</li>
+          </ul>
+        </div>
+        <div class="stickies" style="flex-direction:column; max-width:150px;">
+          <div class="sticky b">Stipends</div>
+          <div class="sticky y">Materials</div>
+          <div class="sticky g">Hosting</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-head">REVENUE STREAMS</div>
+      <div class="block-body">
+        <div class="col">
+          <p class="q">How do you sustain the programme?</p>
+          <ul>
+            <li>Donations &amp; individual giving</li>
+            <li>Grants &amp; funding bodies</li>
+            <li>Corporate sponsorships</li>
+            <li>Fundraising events</li>
+          </ul>
+        </div>
+        <div class="stickies" style="flex-direction:column; max-width:150px;">
+          <div class="sticky b">Donations</div>
+          <div class="sticky y">Grants</div>
+          <div class="sticky g">Sponsorships</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>iGugulam Community Program · Business Model Canvas · Version 1.0<br>
+    Tlangelani Chauke · Lungela Nkunkuma · Templeton Liyabona Dyantyi</footer>
+</div>
+
+</body>
+</html>
