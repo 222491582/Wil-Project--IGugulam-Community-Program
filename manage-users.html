@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>iGugulam - Manage Users</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<!-- =========================
+     SIDEBAR (identical to Manage Announcements)
+     ========================= -->
+
+<div class="sidebar">
+
+    <div class="logo">
+
+        <h2>iGugulam</h2>
+
+        <p>Admin Panel</p>
+
+    </div>
+
+    <nav>
+
+        <a href="admin-dashboard.html">
+            🏠 Dashboard
+        </a>
+
+        <a href="homework.html">
+            📚 Homework
+        </a>
+
+        <a href="announcements.html">
+            📢 Announcements
+        </a>
+
+        <a href="manage-announcements.html">
+            📝 Manage Announcements
+        </a>
+
+        <a href="manage-users.html" class="active">
+            👥 Manage Users
+        </a>
+
+        <a href="#">
+            📚 Manage Resources
+        </a>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+
+        <a href="#">
+            ⚙️ Settings
+        </a>
+
+        <a href="#">
+            🚪 Logout
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     MAIN CONTENT
+     ========================= -->
+
+<div class="main-content">
+
+    <!-- TOP BAR -->
+
+    <header class="topbar">
+
+        <div>
+
+            <h4>Manage Users</h4>
+
+            <p>
+                Add, edit and remove users on the platform
+            </p>
+
+        </div>
+
+        <div class="user-area">
+
+            <span class="notification">
+                🔔
+            </span>
+
+            <div class="user-info">
+
+                <strong>Administrator</strong>
+
+                <small>Admin Account</small>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         PAGE CONTENT
+         ========================= -->
+
+    <main class="dashboard-container">
+
+
+        <!-- PAGE HEADER -->
+
+        <div class="manage-header">
+
+            <div>
+
+                <h1>Users</h1>
+
+                <p>
+                    Manage learners, parents and admins.
+                </p>
+
+            </div>
+
+            <button class="primary-btn"
+                    onclick="openUserForm()">
+
+                + Add User
+
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             SEARCH + FILTERS
+             ========================= -->
+
+        <div class="users-toolbar">
+
+            <div class="search-box">
+
+                <input type="text"
+                       id="userSearch"
+                       placeholder="Search users by name or email...">
+
+            </div>
+
+
+            <select id="userRoleFilter">
+
+                <option value="">All Roles</option>
+                <option value="learner">Learner</option>
+                <option value="parent">Parent</option>
+                <option value="admin">Admin</option>
+
+            </select>
+
+
+            <select id="userStatusFilter">
+
+                <option value="">All Status</option>
+                <option value="active">Active</option>
+                <option value="suspended">Suspended</option>
+
+            </select>
+
+        </div>
+
+
+        <!-- =========================
+             USERS TABLE
+             ========================= -->
+
+        <div class="dashboard-section table-container">
+
+            <table class="users-table">
+
+                <thead>
+
+                <tr>
+
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+
+                </tr>
+
+                </thead>
+
+
+                <tbody id="userTableBody">
+
+
+                <!-- ROW 1: Learner -->
+
+                <tr data-role="learner"
+                    data-status="active">
+
+                    <td>Lerato Adams</td>
+                    <td>lerato@example.com</td>
+
+                    <td>
+                        <span class="role-badge learner">
+                            Learner
+                        </span>
+                    </td>
+
+                    <td>
+                        <span class="table-status status-active">
+                            Active
+                        </span>
+                    </td>
+
+                    <td>
+
+                        <div class="table-actions">
+
+                            <button class="edit-btn"
+                                    onclick="editUser(this)">
+                                ✏️ Edit
+                            </button>
+
+                            <button class="delete-btn"
+                                    onclick="deleteUser(this)">
+                                🗑️ Delete
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+
+                <!-- ROW 2: Parent -->
+
+                <tr data-role="parent"
+                    data-status="active">
+
+                    <td>Mr Adams</td>
+                    <td>adams.parent@example.com</td>
+
+                    <td>
+                        <span class="role-badge parent">
+                            Parent
+                        </span>
+                    </td>
+
+                    <td>
+                        <span class="table-status status-active">
+                            Active
+                        </span>
+                    </td>
+
+                    <td>
+
+                        <div class="table-actions">
+
+                            <button class="edit-btn"
+                                    onclick="editUser(this)">
+                                ✏️ Edit
+                            </button>
+
+                            <button class="delete-btn"
+                                    onclick="deleteUser(this)">
+                                🗑️ Delete
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+
+                <!-- ROW 3: Learner -->
+
+                <tr data-role="learner"
+                    data-status="active">
+
+                    <td>Viole Grace</td>
+                    <td>viole@example.com</td>
+
+                    <td>
+                        <span class="role-badge learner">
+                            Learner
+                        </span>
+                    </td>
+
+                    <td>
+                        <span class="table-status status-active">
+                            Active
+                        </span>
+                    </td>
+
+                    <td>
+
+                        <div class="table-actions">
+
+                            <button class="edit-btn"
+                                    onclick="editUser(this)">
+                                ✏️ Edit
+                            </button>
+
+                            <button class="delete-btn"
+                                    onclick="deleteUser(this)">
+                                🗑️ Delete
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+
+                <!-- ROW 4: Admin -->
+
+                <tr data-role="admin"
+                    data-status="active">
+
+                    <td>Administrator</td>
+                    <td>admin@example.com</td>
+
+                    <td>
+                        <span class="role-badge admin">
+                            Admin
+                        </span>
+                    </td>
+
+                    <td>
+                        <span class="table-status status-active">
+                            Active
+                        </span>
+                    </td>
+
+                    <td>
+
+                        <div class="table-actions">
+
+                            <button class="edit-btn"
+                                    onclick="editUser(this)">
+                                ✏️ Edit
+                            </button>
+
+                            <button class="delete-btn"
+                                    onclick="deleteUser(this)">
+                                🗑️ Delete
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+
+                <!-- ROW 5: Suspended learner -->
+
+                <tr data-role="learner"
+                    data-status="suspended">
+
+                    <td>Sipho Mokoena</td>
+                    <td>sipho@example.com</td>
+
+                    <td>
+                        <span class="role-badge learner">
+                            Learner
+                        </span>
+                    </td>
+
+                    <td>
+                        <span class="table-status status-suspended">
+                            Suspended
+                        </span>
+                    </td>
+
+                    <td>
+
+                        <div class="table-actions">
+
+                            <button class="edit-btn"
+                                    onclick="editUser(this)">
+                                ✏️ Edit
+                            </button>
+
+                            <button class="delete-btn"
+                                    onclick="deleteUser(this)">
+                                🗑️ Delete
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =========================
+     ADD / EDIT USER MODAL
+     ========================= -->
+
+<div id="userFormModal"
+     class="custom-modal">
+
+    <div class="modal-content-custom announcement-form-modal">
+
+        <button class="modal-close"
+                onclick="closeUserForm()">
+
+            &times;
+
+        </button>
+
+
+        <h2 id="userFormTitle">
+            Add User
+        </h2>
+
+        <p>
+            Enter the user's information below.
+        </p>
+
+
+        <!-- FULL NAME -->
+
+        <div class="form-group">
+
+            <label for="userName">
+                Full Name
+            </label>
+
+            <input type="text"
+                   id="userName"
+                   placeholder="Enter full name">
+
+        </div>
+
+
+        <!-- EMAIL -->
+
+        <div class="form-group">
+
+            <label for="userEmail">
+                Email Address
+            </label>
+
+            <input type="email"
+                   id="userEmail"
+                   placeholder="Enter email address">
+
+        </div>
+
+
+        <!-- ROLE -->
+
+        <div class="form-group">
+
+            <label for="userRole">
+                Role
+            </label>
+
+            <select id="userRole">
+
+                <option value="learner">Learner</option>
+                <option value="parent">Parent</option>
+                <option value="admin">Admin</option>
+
+            </select>
+
+        </div>
+
+
+        <!-- STATUS -->
+
+        <div class="form-group">
+
+            <label for="userStatus">
+                Status
+            </label>
+
+            <select id="userStatus">
+
+                <option value="active">Active</option>
+                <option value="suspended">Suspended</option>
+
+            </select>
+
+        </div>
+
+
+        <!-- BUTTONS -->
+
+        <div class="form-actions">
+
+            <button class="secondary-btn"
+                    onclick="closeUserForm()">
+
+                Cancel
+
+            </button>
+
+            <button class="primary-btn"
+                    onclick="saveUser()">
+
+                Save User
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
