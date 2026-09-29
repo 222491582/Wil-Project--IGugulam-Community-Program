@@ -727,7 +727,7 @@ function handleLogin() {
     /* Placeholder redirect.
        Later this will authenticate against the backend and redirect
        based on the user's role. */
-    window.location.href = "dashboard.html";
+    window.location.href = "Dashboard.html";
 }
 
 
