@@ -1086,3 +1086,232 @@ function saveAdminProfile() {
 
     closeAdminProfileForm();
 }
+
+
+/* =========================================
+   DESIGN B PAGES — interactivity shim
+   (Manage Homework, Manage Study Resources,
+    Manage Contact Requests, Study Resources)
+   ========================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* ---- Skip if not a Design B page ---- */
+    if (!document.querySelector(".app")) return;
+
+
+    /* =====================================
+       1. MODAL OPEN / CLOSE
+       ===================================== */
+
+    const backdrop = document.querySelector(".modal-backdrop");
+    const openBtn  = document.querySelector("[data-open-modal]");
+    const closeBtn = document.querySelector("[data-close-modal]");
+
+    function openModal() {
+        if (backdrop) backdrop.classList.add("show");
+    }
+
+    function closeModal() {
+        if (backdrop) backdrop.classList.remove("show");
+    }
+
+    function clearModal() {
+        if (!backdrop) return;
+        backdrop.querySelectorAll("input, textarea").forEach(function (el) {
+            el.value = "";
+        });
+    }
+
+    if (openBtn) {
+        openBtn.addEventListener("click", function () {
+            clearModal();
+            openModal();
+        });
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener("click", closeModal);
+    }
+
+    if (backdrop) {
+        backdrop.addEventListener("click", function (event) {
+            if (event.target === backdrop) closeModal();
+        });
+    }
+
+
+    /* =====================================
+       2. DATA-DEMO BUTTON HANDLER
+       Instead of showing an alert, route the
+       demo buttons to real actions.
+       ===================================== */
+
+    function getTableRow(button) {
+        return button.closest("tr");
+    }
+
+    /* --- Edit row --- */
+
+    function editRow(button) {
+        const row = getTableRow(button);
+        if (!row) return;
+
+        const cells = row.querySelectorAll("td");
+
+        /* Fill modal with the row's data */
+        const inputs = backdrop ? backdrop.querySelectorAll("input") : [];
+        const textarea = backdrop ? backdrop.querySelector("textarea") : null;
+
+        if (inputs[0]) inputs[0].value = cells[0].textContent.trim();
+        if (inputs[1]) inputs[1].value = cells[1].textContent.trim();
+        if (textarea) textarea.value = "Editing…";
+
+        /* Change modal title for context */
+        const modalTitle = backdrop ? backdrop.querySelector("h2") : null;
+        if (modalTitle) modalTitle.textContent = "Edit";
+
+        openModal();
+    }
+
+    /* --- Delete row --- */
+
+    function deleteRow(button) {
+        const row = getTableRow(button);
+        if (!row) return;
+
+        if (confirm("Delete this item?")) {
+            row.remove();
+        }
+    }
+
+    /* --- Save (add new row) --- */
+
+    function saveFromModal() {
+        if (!backdrop) return;
+
+        const inputs = backdrop.querySelectorAll("input");
+        const textarea = backdrop.querySelector("textarea");
+
+        const title = inputs[0] ? inputs[0].value.trim() : "";
+        const second = inputs[1] ? inputs[1].value.trim() : "";
+
+        if (!title || !second) {
+            alert("Please fill in the required fields.");
+            return;
+        }
+
+        /* Find the table on the page */
+        const tbody = document.querySelector("table tbody");
+        if (!tbody) {
+            /* Not a table page (Study Resources uses cards) */
+            /* We still close the modal so it doesn't feel stuck */
+            closeModal();
+            return;
+        }
+
+        /* Build a new row with the same structure as the others */
+        const templateRow = tbody.querySelector("tr");
+        const cellCount = templateRow ? templateRow.querySelectorAll("td").length : 3;
+
+        const newRow = document.createElement("tr");
+        newRow.setAttribute("data-search-row", "");
+
+        let rowHTML = `<td>${title}</td>`;
+        if (cellCount >= 2) rowHTML += `<td>${second}</td>`;
+
+        if (cellCount >= 3) {
+            /* Detect the kind of page from the action column's button label */
+            const existingLabel = templateRow
+                ? templateRow.querySelector("button")?.textContent.trim()
+                : "Edit";
+
+            if (existingLabel && existingLabel.toLowerCase().includes("delete")) {
+                rowHTML += `<td><button class="action-btn" data-demo="Edit">Edit</button></td>`;
+            } else {
+                rowHTML += `<td>
+                    <button class="action-btn" data-demo="Edit">Edit</button>
+                    <button class="action-btn danger" data-demo="Delete">Delete</button>
+                </td>`;
+            }
+        }
+
+        newRow.innerHTML = rowHTML;
+        tbody.appendChild(newRow);
+
+        /* Re-attach demo handlers to the new row's buttons */
+        attachDemoHandlers(newRow);
+
+        closeModal();
+        clearModal();
+    }
+
+
+    /* =====================================
+       3. WIRE UP ALL `data-demo` BUTTONS
+       ===================================== */
+
+    function attachDemoHandlers(scope) {
+        scope.querySelectorAll("[data-demo]").forEach(function (button) {
+            const label = button.dataset.demo.toLowerCase();
+
+            button.onclick = function () {
+
+                if (label.includes("edit")) {
+                    editRow(button);
+                    return;
+                }
+
+                if (label.includes("delete")) {
+                    deleteRow(button);
+                    return;
+                }
+
+                if (label.includes("submitted") || label.includes("save")) {
+                    saveFromModal();
+                    return;
+                }
+
+                /* Reply / View / Preview / Download etc. — no-op */
+            };
+        });
+    }
+
+    /* Attach to every demo button on the page on load */
+    attachDemoHandlers(document);
+
+
+    /* =====================================
+       4. SEARCH
+       ===================================== */
+
+    const searchInput = document.querySelector("[data-search]");
+
+    if (searchInput) {
+        searchInput.addEventListener("input", function () {
+            const query = this.value.toLowerCase().trim();
+
+            /* Filter table rows */
+            document
+                .querySelectorAll("[data-search-row]")
+                .forEach(function (item) {
+                    const text = item.textContent.toLowerCase();
+                    item.style.display = text.includes(query) ? "" : "none";
+                });
+        });
+    }
+
+
+    /* =====================================
+       5. PREVENT FORM SUBMITS FROM RELOADING
+       (Design B modals have no <form>, but
+        just in case any future edit adds one)
+       ===================================== */
+
+    document.querySelectorAll("form").forEach(function (form) {
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+        });
+    });
+
+});
