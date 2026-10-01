@@ -1,4 +1,9 @@
 package za.ac.cput.igugulamcommunityprogrambackend.repository;
 
-public interface HomeworkRepository {
+import za.ac.cput.igugulamcommunityprogrambackend.domain.Homework;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface HomeworkRepository extends JpaRepository<Homework, Long> {
 }
