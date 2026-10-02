@@ -1,4 +1,4 @@
-package com.igugulam.model;
+package za.ac.cput.igugulamcommunityprogrambackend.domain;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
@@ -74,3 +74,4 @@ public class Announcement {
         this.createdAt = createdAt;
     }
 }
+
