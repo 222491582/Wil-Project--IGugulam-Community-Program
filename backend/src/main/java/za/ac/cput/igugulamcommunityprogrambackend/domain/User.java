@@ -7,37 +7,39 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "users")
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "user_type", discriminatorType = DiscriminatorType.STRING)
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    protected Long id;
 
     @Column(nullable = false, unique = true)
-    private String username;
+    protected String username;
 
     @Column(nullable = false)
-    private String password;
+    protected String password;
 
     @Column(nullable = false, unique = true)
-    private String email;
+    protected String email;
 
     @Column(nullable = false)
-    private String fullName;
+    protected String fullName;
 
-    private String phone;
+    protected String phone;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private Role role;
+    protected Role role;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private Status status = Status.ACTIVE;
+    protected Status status = Status.ACTIVE;
 
     @CreationTimestamp
     @Column(name = "date_joined", nullable = false, updatable = false)
-    private LocalDateTime dateJoined;
+    protected LocalDateTime dateJoined;
 
     public User() {}
 
@@ -55,33 +57,41 @@ public class User {
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
+
     public String getUsername() { return username; }
     public void setUsername(String username) { this.username = username; }
+
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
+
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
+
     public String getFullName() { return fullName; }
     public void setFullName(String fullName) { this.fullName = fullName; }
+
     public String getPhone() { return phone; }
     public void setPhone(String phone) { this.phone = phone; }
+
     public Role getRole() { return role; }
     public void setRole(Role role) { this.role = role; }
+
     public Status getStatus() { return status; }
     public void setStatus(Status status) { this.status = status; }
+
     public LocalDateTime getDateJoined() { return dateJoined; }
     public void setDateJoined(LocalDateTime dateJoined) { this.dateJoined = dateJoined; }
 
     public static class Builder {
-        private Long id;
-        private String username;
-        private String password;
-        private String email;
-        private String fullName;
-        private String phone;
-        private Role role;
-        private Status status = Status.ACTIVE;
-        private LocalDateTime dateJoined;
+        protected Long id;
+        protected String username;
+        protected String password;
+        protected String email;
+        protected String fullName;
+        protected String phone;
+        protected Role role;
+        protected Status status = Status.ACTIVE;
+        protected LocalDateTime dateJoined;
 
         public Builder setId(Long id) { this.id = id; return this; }
         public Builder setUsername(String username) { this.username = username; return this; }
@@ -99,6 +109,7 @@ public class User {
     @Override
     public String toString() {
         return "User{id=" + id + ", username='" + username + "', email='" + email +
-                "', fullName='" + fullName + "', role=" + role + ", status=" + status + "}";
+                "', fullName='" + fullName + "', role=" + role +
+                ", status=" + status + ", dateJoined=" + dateJoined + "}";
     }
 }
