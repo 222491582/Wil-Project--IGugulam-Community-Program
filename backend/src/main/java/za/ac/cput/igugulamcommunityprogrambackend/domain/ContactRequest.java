@@ -1,22 +1,31 @@
 package za.ac.cput.igugulamcommunityprogrambackend.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "contact_requests")
 public class ContactRequest {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long requestId;
 
+    @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false)
     private String email;
+
+    @Column(nullable = false)
     private String subject;
+
+    @Column(nullable = false, columnDefinition = "TEXT")
     private String message;
+
+    @Column(nullable = false, length = 80)
     private String status;
+
+    @Column(columnDefinition = "TEXT")
     private String reply;
 
     public ContactRequest() {
@@ -88,18 +97,5 @@ public class ContactRequest {
 
     public void setReply(String reply) {
         this.reply = reply;
-    }
-
-    @Override
-    public String toString() {
-        return "ContactRequest{" +
-                "requestId=" + requestId +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", subject='" + subject + '\'' +
-                ", message='" + message + '\'' +
-                ", status='" + status + '\'' +
-                ", reply='" + reply + '\'' +
-                '}';
     }
 }

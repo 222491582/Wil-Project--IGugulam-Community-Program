@@ -14,60 +14,22 @@
   </header>
   <div class="layout">
     <aside class="sidebar">
-<div class="sidebar">
-
-    <div class="logo">
-
+      <div class="logo">
         <h2>iGugulam</h2>
-
         <p>Admin Panel</p>
-
-    </div> 
- 
+      </div>
       <nav>
-
-    <a href="admin-dashboard.html">
-        🏠 Admin Dashboard
-    </a>
-
-    <a href="Homework.html">
-        📚 Homework
-    </a>
-
-    <a href="Announcements.html">
-        📢 Announcements
-    </a>
-
-    <a href="manage-homework.html" class="active">
-        📝 Manage Homework
-    </a>
-
-
-    <a href="Manage-announcements.html">
-        📝 Manage Announcements
-    </a>
-
-    <a href="manage-users.html">
-        👥 Manage Users
-    </a>
-
-    <a href="manage-study-resources.html">
-        📚 Manage Resources
-    </a>
-
-</nav>
-
-<div class="sidebar-bottom">
-
-       <a href="admin-profile.html">
-        👤 Profile
-    </a>
-
-    <a href="admin-login.html">
-        🚪 Logout
-    </a>
-
-</div>
+        <a href="admin-dashboard.html">🏠 Admin Dashboard</a>
+        <a href="manage-homework.html" class="active">📝 Manage Homework</a>
+        <a href="Manage-announcements.html">📢 Manage Announcements</a>
+        <a href="manage-study-resources.html">📚 Manage Study Resources</a>
+        <a href="manage-users.html">👥 Manage Users</a>
+        <a href="manage-contact-requests.html">✉️ Contact Requests</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <a href="admin-profile.html">👤 Admin Profile</a>
+        <a href="admin-login.html">🚪 Log out</a>
+      </div>
 </aside>
     <main class="content">
 <h1 style="font-size:22px;margin-bottom:18px;">Manage Homework <small style="float:right;font-size:13px;font-weight:400;">♟ Admin User ▾</small></h1>
@@ -79,25 +41,23 @@
   <div class="table-wrap">
     <table>
       <thead><tr><th>Homework Title</th><th>Due Date</th><th>Action</th></tr></thead>
-      <tbody>
-        <tr data-search-row><td>Homework Title</td><td>DD/MM/YYYY</td><td><button class="action-btn" data-demo="Edit homework">Edit</button></td></tr>
-        <tr data-search-row><td>Homework Title</td><td>DD/MM/YYYY</td><td><button class="action-btn" data-demo="Edit homework">Edit</button></td></tr>
-        <tr data-search-row><td>Homework Title</td><td>DD/MM/YYYY</td><td><button class="action-btn" data-demo="Edit homework">Edit</button></td></tr>
-      </tbody>
+      <tbody id="adminHomeworkTableBody"></tbody>
     </table>
   </div>
 </section>
 <div class="modal-backdrop">
   <div class="modal">
     <button class="close-btn" data-close-modal>×</button>
-    <h2>Add Homework</h2>
-    <div class="field"><label>Homework Title</label><input placeholder="Homework Title"></div>
+    <h2 id="adminHomeworkFormTitle">Add Homework</h2>
+    <div class="field"><label>Homework Title</label><input id="adminHomeworkTitle" placeholder="Homework Title"></div>
     <br>
-    <div class="field"><label>Due Date</label><input placeholder="DD/MM/YYYY"></div>
+    <div class="field"><label>Subject</label><input id="adminHomeworkSubject" placeholder="Subject"></div>
     <br>
-    <div class="field"><label>Description</label><textarea placeholder="Homework Description"></textarea></div>
+    <div class="field"><label>Due Date</label><input id="adminHomeworkDueDate" type="date"></div>
     <br>
-    <button class="add-btn" data-demo="Homework form submitted (prototype only)">Save Homework</button>
+    <div class="field"><label>Description</label><textarea id="adminHomeworkDescription" placeholder="Homework Description"></textarea></div>
+    <br>
+    <button class="add-btn" onclick="saveManagedHomework()">Save Homework</button>
   </div>
 </div>
 </main>

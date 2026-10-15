@@ -1,20 +1,25 @@
 package za.ac.cput.igugulamcommunityprogrambackend.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "homework")
 public class Homework {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long homeworkId;
 
+    @Column(nullable = false)
     private String title;
+
+    @Column(nullable = false)
     private String subject;
+
+    @Column(nullable = false, columnDefinition = "TEXT")
     private String description;
+
+    @Column(nullable = false, length = 40)
     private String dueDate;
 
     public Homework() {
@@ -69,14 +74,4 @@ public class Homework {
         this.dueDate = dueDate;
     }
 
-    @Override
-    public String toString() {
-        return "Homework{" +
-                "homeworkId=" + homeworkId +
-                ", title='" + title + '\'' +
-                ", subject='" + subject + '\'' +
-                ", description='" + description + '\'' +
-                ", dueDate='" + dueDate + '\'' +
-                '}';
-    }
 }

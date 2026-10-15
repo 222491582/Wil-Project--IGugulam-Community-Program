@@ -15,59 +15,22 @@
   <div class="layout">
     <aside class="sidebar">
 
-      <div class="sidebar">
-
-    <div class="logo">
-
+      <div class="logo">
         <h2>iGugulam</h2>
-
         <p>Admin Panel</p>
-
-    </div>
-   <nav>
-
-    <a href="admin-dashboard.html" >
-        🏠 Admin Dashboard
-    </a>
-
-    <a href="Homework.html">
-        📚 Homework
-    </a>
-
-    <a href="Announcements.html">
-        📢 Announcements
-    </a>
-
-    <a href="manage-homework.html">
-        📝 Manage Homework
-    </a>
-
-
-    <a href="Manage-announcements.html">
-        📝 Manage Announcements
-    </a>
-
-    <a href="manage-users.html">
-        👥 Manage Users
-    </a>
-
-    <a href="manage-study-resources.html" class="active">
-        📚 Manage Resources
-    </a>
-
-</nav>
-
-<div class="sidebar-bottom">
-
-       <a href="admin-profile.html">
-        👤 Profile
-    </a>
-
-    <a href="admin-login.html">
-        🚪 Logout
-    </a>
-
-</div>
+      </div>
+      <nav>
+        <a href="admin-dashboard.html">🏠 Admin Dashboard</a>
+        <a href="manage-homework.html">📝 Manage Homework</a>
+        <a href="Manage-announcements.html">📢 Manage Announcements</a>
+        <a href="manage-study-resources.html" class="active">📚 Manage Study Resources</a>
+        <a href="manage-users.html">👥 Manage Users</a>
+        <a href="manage-contact-requests.html">✉️ Contact Requests</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <a href="admin-profile.html">👤 Admin Profile</a>
+        <a href="admin-login.html">🚪 Log out</a>
+      </div>
 </aside>
     <main class="content">
 <h1 style="font-size:22px;margin-bottom:18px;">Manage Study Resources <small style="float:right;font-size:13px;font-weight:400;">♟ Admin User ▾</small></h1>
@@ -79,25 +42,36 @@
   <div class="table-wrap">
     <table>
       <thead><tr><th>Resource Title</th><th>Subject</th><th>Action</th></tr></thead>
-      <tbody>
-        <tr data-search-row><td>Resource Title</td><td>Subject</td><td><button class="action-btn" data-demo="Edit resource">Edit</button></td></tr>
-        <tr data-search-row><td>Resource Title</td><td>Subject</td><td><button class="action-btn danger" data-demo="Delete resource">Delete</button></td></tr>
-        <tr data-search-row><td>Resource Title</td><td>Subject</td><td><button class="action-btn" data-demo="Edit resource">Edit</button></td></tr>
-      </tbody>
+      <tbody id="adminResourcesTableBody"></tbody>
     </table>
   </div>
 </section>
 <div class="modal-backdrop">
   <div class="modal">
     <button class="close-btn" data-close-modal>×</button>
-    <h2>Add Resource</h2>
-    <div class="field"><label>Resource Title</label><input placeholder="Resource Title"></div>
+    <h2 id="adminResourceFormTitle">Add Resource</h2>
+    <div class="field"><label>Resource Title</label><input id="adminResourceTitle" placeholder="Resource Title"></div>
     <br>
-    <div class="field"><label>Subject</label><input placeholder="Subject"></div>
+    <div class="field"><label>Subject</label><input id="adminResourceSubject" placeholder="Subject"></div>
     <br>
-    <div class="field"><label>Description</label><textarea placeholder="Brief Description"></textarea></div>
+    <div class="field"><label>Description</label><textarea id="adminResourceDescription" placeholder="Brief Description"></textarea></div>
     <br>
-    <button class="add-btn" data-demo="Resource form submitted (prototype only)">Save Resource</button>
+    <div class="field"><label>Resource type</label>
+      <select id="adminResourceType">
+        <option>Digital textbook</option>
+        <option>Workbook</option>
+        <option>Digital storybooks</option>
+        <option>Lessons and practice</option>
+        <option>Interactive activities</option>
+        <option>Study material</option>
+      </select>
+    </div>
+    <br>
+    <div class="field"><label>Grade level</label><input id="adminResourceGrade" placeholder="For example, Grades 7-9"></div>
+    <br>
+    <div class="field"><label>Resource URL</label><input id="adminResourceUrl" type="url" placeholder="https://..."></div>
+    <br>
+    <button class="add-btn" onclick="saveManagedResource()">Save Resource</button>
   </div>
 </div>
 </main>

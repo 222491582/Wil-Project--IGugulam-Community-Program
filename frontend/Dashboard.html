@@ -99,12 +99,51 @@
                 <a href="Homework.html" class="primary-btn">
                     View My Homework
                 </a>
+                <a href="study-resources.html" class="secondary-btn dashboard-resource-link">
+                    Browse digital books and study materials
+                </a>
             </div>
 
             <div class="welcome-icon">
                 📚
             </div>
 
+        </section>
+
+        <section class="dashboard-section student-search-section" aria-labelledby="studentSearchHeading">
+            <div class="section-header student-search-heading">
+                <div>
+                    <h2 id="studentSearchHeading">Find what you need</h2>
+                    <p>Search homework, announcements, books and study resources.</p>
+                </div>
+            </div>
+            <div class="student-search-controls">
+                <label class="student-search-input" for="studentPortalSearch">
+                    <span aria-hidden="true">⌕</span>
+                    <input id="studentPortalSearch" type="search"
+                           placeholder="Try fractions, reading, exams or Grade 7"
+                           autocomplete="off">
+                </label>
+                <label class="student-search-filter">
+                    <span>Grade</span>
+                    <select id="studentSearchGrade" aria-label="Filter resources by grade">
+                        <option value="">All grades</option>
+                        <option value="4">Grade 4</option>
+                        <option value="5">Grade 5</option>
+                        <option value="6">Grade 6</option>
+                        <option value="7">Grade 7</option>
+                        <option value="8">Grade 8</option>
+                        <option value="9">Grade 9</option>
+                        <option value="10">Grade 10</option>
+                        <option value="11">Grade 11</option>
+                        <option value="12">Grade 12</option>
+                    </select>
+                </label>
+            </div>
+            <p id="studentSearchStatus" class="student-search-status" aria-live="polite">
+                Loading homework, announcements and study resources...
+            </p>
+            <div id="studentSearchResults" class="student-search-results" aria-live="polite"></div>
         </section>
 
 

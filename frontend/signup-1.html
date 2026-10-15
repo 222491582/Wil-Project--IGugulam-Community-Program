@@ -3,48 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>iGugulam - Sign Up</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-          rel="stylesheet">
-
+    <title>iGugulam - Guardian Sign Up</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+<main class="auth-page">
+    <a href="index.html" class="back-btn">&lt; Choose portal</a>
+    <section class="auth-card auth-card-wide">
+        <div class="auth-logo" aria-hidden="true">📖</div>
+        <h1>Create a guardian account</h1>
+        <p>Register your account and learner together.</p>
 
-<div class="auth-page">
-
-    <a href="index.html" class="back-btn">&lt; Back</a>
-
-    <div class="auth-card">
-
-        <div class="auth-logo">📖</div>
-
-        <h1>Sign up</h1>
-
+        <h2 class="form-section-title">Guardian account</h2>
         <div class="auth-field">
-            <label for="username">Username:</label>
-            <input type="text" id="username" placeholder="Username">
+            <label for="guardianName">Guardian full name</label>
+            <input id="guardianName" autocomplete="name" required>
+        </div>
+        <div class="auth-field">
+            <label for="guardianEmail">Email address</label>
+            <input id="guardianEmail" type="email" autocomplete="email" required>
+        </div>
+        <div class="auth-field">
+            <label for="guardianPhone">Phone number</label>
+            <input id="guardianPhone" type="tel" autocomplete="tel" required>
+        </div>
+        <div class="auth-field">
+            <label for="username">Choose a username</label>
+            <input id="username" autocomplete="username" required>
+        </div>
+        <div class="auth-field">
+            <label for="password">Choose a password</label>
+            <input id="password" type="password" autocomplete="new-password" minlength="8" required>
+            <small>Use at least 8 characters.</small>
         </div>
 
+        <h2 class="form-section-title">Learner details</h2>
         <div class="auth-field">
-            <label for="password">Password:</label>
-            <input type="password" id="password" placeholder="********">
+            <label for="studentName">Learner full name</label>
+            <input id="studentName" required>
+        </div>
+        <div class="auth-field">
+            <label for="studentGrade">School grade</label>
+            <select id="studentGrade" required>
+                <option value="">Choose a grade</option>
+                <option value="4">Grade 4</option><option value="5">Grade 5</option>
+                <option value="6">Grade 6</option><option value="7">Grade 7</option>
+                <option value="8">Grade 8</option><option value="9">Grade 9</option>
+                <option value="10">Grade 10</option><option value="11">Grade 11</option>
+                <option value="12">Grade 12</option>
+            </select>
+        </div>
+        <fieldset class="subject-choice-fieldset">
+            <legend>Choose subjects the learner needs help with</legend>
+            <p class="subject-choice-hint">Select all that apply. Choices are based on the learner's grade.</p>
+            <div id="guardianSignupSubjectChoices" class="subject-choice-list"></div>
+        </fieldset>
+        <p id="guardianSignupSubjectsError" class="auth-error" role="alert"></p>
+        <div class="auth-field">
+            <label for="studentEmergency">Learner emergency contact</label>
+            <input id="studentEmergency" type="tel" required>
+        </div>
+        <div class="auth-field">
+            <label for="guardianRelationship">Relationship to learner</label>
+            <input id="guardianRelationship" placeholder="For example, parent or caregiver" required>
         </div>
 
-        <button class="auth-btn" onclick="goToSignup2()">Next</button>
-
-        <span class="auth-link">
-            or <a href="user-login.html">Log in</a> if you have registered.
-        </span>
-
-    </div>
-
-</div>
-
+        <button class="auth-btn" type="button" onclick="completeGuardianSignup()">Create guardian account</button>
+        <p id="signupError" class="auth-error" role="alert"></p>
+        <span class="auth-link">Already registered? <a href="family-portal.html">Log in to the shared portal</a></span>
+        <span class="auth-link">Creating a student account? <a href="family-portal.html">Student sign up</a></span>
+    </section>
+</main>
 <script src="js/script.js"></script>
-
 </body>
 </html>

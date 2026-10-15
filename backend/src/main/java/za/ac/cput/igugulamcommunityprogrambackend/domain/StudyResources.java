@@ -1,21 +1,32 @@
 package za.ac.cput.igugulamcommunityprogrambackend.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "study_resources")
 public class StudyResources {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long resourceId;
 
+    @Column(nullable = false)
     private String title;
+
+    @Column(nullable = false)
     private String subject;
+
+    @Column(nullable = false, columnDefinition = "TEXT")
     private String description;
+
+    @Column(length = 2048)
     private String fileUrl;
+
+    @Column(nullable = false, length = 40)
+    private String resourceType = "Study material";
+
+    @Column(length = 80)
+    private String gradeLevel;
 
     public StudyResources() {
     }
@@ -69,14 +80,19 @@ public class StudyResources {
         this.fileUrl = fileUrl;
     }
 
-    @Override
-    public String toString() {
-        return "StudyResources{" +
-                "resourceId=" + resourceId +
-                ", title='" + title + '\'' +
-                ", subject='" + subject + '\'' +
-                ", description='" + description + '\'' +
-                ", fileUrl='" + fileUrl + '\'' +
-                '}';
+    public String getResourceType() {
+        return resourceType;
+    }
+
+    public void setResourceType(String resourceType) {
+        this.resourceType = resourceType == null || resourceType.isBlank() ? "Study material" : resourceType;
+    }
+
+    public String getGradeLevel() {
+        return gradeLevel;
+    }
+
+    public void setGradeLevel(String gradeLevel) {
+        this.gradeLevel = gradeLevel;
     }
 }

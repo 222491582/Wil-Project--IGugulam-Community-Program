@@ -16,10 +16,6 @@
 
 <body>
 
-<!-- =========================
-     SIDEBAR (identical to Manage Announcements)
-     ========================= -->
-
 <div class="sidebar">
 
     <div class="logo">
@@ -30,50 +26,19 @@
 
     </div>
 
-   <nav>
+    <nav>
+        <a href="admin-dashboard.html" class="active">🏠 Admin Dashboard</a>
+        <a href="manage-homework.html">📝 Manage Homework</a>
+        <a href="Manage-announcements.html">📢 Manage Announcements</a>
+        <a href="manage-study-resources.html">📚 Manage Study Resources</a>
+        <a href="manage-users.html">👥 Manage Users</a>
+        <a href="manage-contact-requests.html">✉️ Contact Requests</a>
+    </nav>
 
-    <a href="admin-dashboard.html" class="active">
-        🏠 Admin Dashboard
-    </a>
-
-    <a href="Homework.html">
-        📚 Homework
-    </a>
-
-    <a href="Announcements.html">
-        📢 Announcements
-    </a>
-
-    <a href="manage-homework.html">
-        📝 Manage Homework
-    </a>
-
-
-    <a href="Manage-announcements.html">
-        📝 Manage Announcements
-    </a>
-
-    <a href="manage-users.html">
-        👥 Manage Users
-    </a>
-
-    <a href="manage-study-resources.html">
-        📚 Manage Resources
-    </a>
-
-</nav>
-
-<div class="sidebar-bottom">
-
-       <a href="admin-profile.html">
-        👤 Profile
-    </a>
-
-    <a href="admin-login.html">
-        🚪 Logout
-    </a>
-
-</div>
+    <div class="sidebar-bottom">
+        <a href="admin-profile.html">👤 Admin Profile</a>
+        <a href="admin-login.html">🚪 Log out</a>
+    </div>
 
 </div>
 
@@ -138,6 +103,13 @@
                 🧑‍💻
             </div>
 
+        </section>
+
+        <section class="stats-grid">
+            <div class="stat-card"><div class="stat-icon">👥</div><div><h3 id="adminUsersCount">0</h3><p>Users</p></div></div>
+            <div class="stat-card"><div class="stat-icon">📝</div><div><h3 id="adminHomeworkCount">0</h3><p>Homework</p></div></div>
+            <div class="stat-card"><div class="stat-icon">📢</div><div><h3 id="adminAnnouncementsCount">0</h3><p>Announcements</p></div></div>
+            <div class="stat-card"><div class="stat-icon">✉️</div><div><h3 id="adminContactCount">0</h3><p>Contact requests</p></div></div>
         </section>
 
 

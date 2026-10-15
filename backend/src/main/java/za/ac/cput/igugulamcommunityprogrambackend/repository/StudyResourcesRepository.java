@@ -1,8 +1,9 @@
+
 package za.ac.cput.igugulamcommunityprogrambackend.repository;
 
-import za.ac.cput.igugulamcommunityprogrambackend.domain.StudyResources;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import za.ac.cput.igugulamcommunityprogrambackend.domain.StudyResources;
 
 @Repository
 public interface StudyResourcesRepository extends JpaRepository<StudyResources, Long> {

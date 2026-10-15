@@ -24,7 +24,7 @@
 
         <button class="hamburger" aria-label="Menu">☰</button>
 
-        <a href="login.html" class="public-logo">
+        <a href="index.html" class="public-logo">
 
             <div class="public-logo-icon">📖</div>
 
@@ -37,13 +37,7 @@
 
     <div class="public-navbar-right">
 
-        <a href="signup-1.html" class="nav-btn-outline">
-            Sign up
-        </a>
-
-        <a href="login.html" class="nav-btn-solid">
-            Log in
-        </a>
+        <a href="index.html" class="nav-btn-outline">Choose portal</a>
 
     </div>
 
@@ -59,6 +53,7 @@
     <div class="auth-card">
 
         <h1>Administrator log in</h1>
+        <p>Administrator accounts are provided by the program administrator.</p>
 
         <div class="auth-field">
             <label for="adminLoginUsername">Username:</label>
@@ -77,6 +72,7 @@
         <button class="auth-btn" onclick="handleAdminLogin()">
             Log in
         </button>
+        <p id="loginError" class="auth-error" role="alert"></p>
 
     </div>
 
