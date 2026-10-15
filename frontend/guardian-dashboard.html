@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iGugulam - Guardian Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="sidebar">
+    <div class="logo"><h2>iGugulam</h2><p>Guardian Portal</p></div>
+    <nav>
+        <a href="guardian-dashboard.html" class="active">🏠 Guardian dashboard</a>
+        <a href="guardian-study-resources.html">📚 Books and study resources</a>
+        <a href="user-profile.html">👤 My profile</a>
+    </nav>
+    <div class="sidebar-bottom"><a href="index.html" data-logout>🚪 Log out</a></div>
+</div>
+<main class="main-content">
+    <header class="topbar">
+        <div><h4>Guardian dashboard</h4><p>Support your learner's study journey.</p></div>
+        <div class="user-area"><div class="user-info"><strong>Guardian</strong><small>Guardian account</small></div></div>
+    </header>
+    <div class="dashboard-container">
+        <section class="welcome-card">
+            <div><h1>Welcome, <span id="guardianWelcomeName">Guardian</span></h1>
+                <p>Check your learner's details and find free digital books and study support.</p>
+                <a href="guardian-study-resources.html" class="primary-btn">Browse books and resources</a>
+            </div>
+            <div class="welcome-icon" aria-hidden="true">📚</div>
+        </section>
+        <section class="dashboard-section profile-card">
+            <h2>Registered learner</h2>
+            <div id="guardianLearners" aria-live="polite"><p>Loading learner details...</p></div>
+        </section>
+    </div>
+</main>
+<script src="js/script.js"></script>
+</body>
+</html>

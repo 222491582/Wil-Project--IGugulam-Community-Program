@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iGugulam - Student Sign Up</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="auth-page">
+    <a href="index.html" class="back-btn">&lt; Choose portal</a>
+    <section class="auth-card">
+        <div class="auth-logo" aria-hidden="true">📚</div>
+        <h1>Create a student account</h1>
+        <p>Set up your own study account. Ask a parent or guardian for help if needed.</p>
+        <div class="auth-field">
+            <label for="studentSignupName">Your full name</label>
+            <input id="studentSignupName" autocomplete="name" required>
+        </div>
+        <div class="auth-field">
+            <label for="studentSignupEmail">Email address</label>
+            <input id="studentSignupEmail" type="email" autocomplete="email" required>
+        </div>
+        <div class="auth-field">
+            <label for="studentSignupPhone">Phone number</label>
+            <input id="studentSignupPhone" type="tel" autocomplete="tel" required>
+        </div>
+        <div class="auth-field">
+            <label for="studentSignupGrade">School grade</label>
+            <select id="studentSignupGrade" required>
+                <option value="">Choose a grade</option>
+                <option value="4">Grade 4</option><option value="5">Grade 5</option>
+                <option value="6">Grade 6</option><option value="7">Grade 7</option>
+                <option value="8">Grade 8</option><option value="9">Grade 9</option>
+                <option value="10">Grade 10</option><option value="11">Grade 11</option>
+                <option value="12">Grade 12</option>
+            </select>
+        </div>
+        <fieldset class="subject-choice-fieldset">
+            <legend>Choose subjects you want help with</legend>
+            <p class="subject-choice-hint">Select all that apply. Choices are based on your grade.</p>
+            <div id="studentSignupSubjectChoices" class="subject-choice-list"></div>
+        </fieldset>
+        <p id="studentSignupSubjectsError" class="auth-error" role="alert"></p>
+        <div class="auth-field">
+            <label for="studentSignupUsername">Choose a username</label>
+            <input id="studentSignupUsername" autocomplete="username" required>
+        </div>
+        <div class="auth-field">
+            <label for="studentSignupPassword">Choose a password</label>
+            <input id="studentSignupPassword" type="password" autocomplete="new-password" minlength="8" required>
+            <small>Use at least 8 characters.</small>
+        </div>
+        <button class="auth-btn" type="button" onclick="completeStudentSignup()">Create student account</button>
+        <p id="signupError" class="auth-error" role="alert"></p>
+        <span class="auth-link">Already registered? <a href="family-portal.html">Log in to the shared portal</a></span>
+    </section>
+</main>
+<script src="js/script.js"></script>
+</body>
+</html>

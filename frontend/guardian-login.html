@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iGugulam - Guardian Log In</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="auth-page">
+    <a href="index.html" class="back-btn">&lt; Choose portal</a>
+    <section class="auth-card">
+        <div class="auth-logo" aria-hidden="true">📖</div>
+        <h1>Guardian log in</h1>
+        <p>Sign in to view your learner and their study materials.</p>
+        <div class="auth-field">
+            <label for="guardianLoginUsername">Username</label>
+            <input id="guardianLoginUsername" autocomplete="username" required>
+        </div>
+        <div class="auth-field">
+            <label for="guardianLoginPassword">Password</label>
+            <input id="guardianLoginPassword" type="password" autocomplete="current-password" required>
+        </div>
+        <button class="auth-btn" type="button" onclick="handleGuardianLogin()">Guardian log in</button>
+        <p id="loginError" class="auth-error" role="alert"></p>
+        <span class="auth-link">New here? <a href="family-portal.html">Log in or sign up</a></span>
+        <span class="auth-link">Student or guardian? <a href="family-portal.html">Open the shared portal</a></span>
+    </section>
+</main>
+<script src="js/script.js"></script>
+</body>
+</html>

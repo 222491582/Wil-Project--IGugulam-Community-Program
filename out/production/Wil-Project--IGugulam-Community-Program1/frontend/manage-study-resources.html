@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iGugulam - Manage Study Resources</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <img class="logo" src="images/logo.png" alt="iGugulam Community Programme logo">
+<a href="admin-login.html" class="logout">Log out</a>    
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+
+      <div class="sidebar">
+
+    <div class="logo">
+
+        <h2>iGugulam</h2>
+
+        <p>Admin Panel</p>
+
+    </div>
+   <nav>
+
+    <a href="admin-dashboard.html" >
+        🏠 Admin Dashboard
+    </a>
+
+    <a href="Homework.html">
+        📚 Homework
+    </a>
+
+    <a href="Announcements.html">
+        📢 Announcements
+    </a>
+
+    <a href="manage-homework.html">
+        📝 Manage Homework
+    </a>
+
+
+    <a href="Manage-announcements.html">
+        📝 Manage Announcements
+    </a>
+
+    <a href="manage-users.html">
+        👥 Manage Users
+    </a>
+
+    <a href="manage-study-resources.html" class="active">
+        📚 Manage Resources
+    </a>
+
+</nav>
+
+<div class="sidebar-bottom">
+
+       <a href="admin-profile.html">
+        👤 Profile
+    </a>
+
+    <a href="admin-login.html">
+        🚪 Logout
+    </a>
+
+</div>
+</aside>
+    <main class="content">
+<h1 style="font-size:22px;margin-bottom:18px;">Manage Study Resources <small style="float:right;font-size:13px;font-weight:400;">♟ Admin User ▾</small></h1>
+<section class="panel">
+  <div class="panel-header">
+    <span>Resources List</span>
+    <button class="add-btn" data-open-modal>+ Add Resource</button>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Resource Title</th><th>Subject</th><th>Action</th></tr></thead>
+      <tbody id="adminResourcesTableBody"></tbody>
+    </table>
+  </div>
+</section>
+<div class="modal-backdrop">
+  <div class="modal">
+    <button class="close-btn" data-close-modal>×</button>
+    <h2 id="adminResourceFormTitle">Add Resource</h2>
+    <div class="field"><label>Resource Title</label><input id="adminResourceTitle" placeholder="Resource Title"></div>
+    <br>
+    <div class="field"><label>Subject</label><input id="adminResourceSubject" placeholder="Subject"></div>
+    <br>
+    <div class="field"><label>Description</label><textarea id="adminResourceDescription" placeholder="Brief Description"></textarea></div>
+    <br>
+    <div class="field"><label>Resource URL</label><input id="adminResourceUrl" type="url" placeholder="https://..."></div>
+    <br>
+    <button class="add-btn" onclick="saveManagedResource()">Save Resource</button>
+  </div>
+</div>
+</main>
+  </div>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>
