@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iGugulam - Guardian Study Library</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="sidebar">
+    <div class="logo"><h2>iGugulam</h2><p>Guardian Portal</p></div>
+    <nav>
+        <a href="guardian-dashboard.html">🏠 Guardian dashboard</a>
+        <a href="guardian-study-resources.html" class="active">📚 Books and study resources</a>
+        <a href="user-profile.html">👤 My profile</a>
+    </nav>
+    <div class="sidebar-bottom"><a href="index.html" data-logout>🚪 Log out</a></div>
+</div>
+<main class="main-content">
+    <header class="topbar">
+        <div><h4>Books and study resources</h4><p>Free learning materials to use at home.</p></div>
+        <div class="user-area"><div class="user-info"><strong>Guardian</strong><small>Guardian account</small></div></div>
+    </header>
+    <div class="dashboard-container">
+        <section class="welcome-card">
+            <div><h1>Study together 📖</h1><p>Find textbooks, practice exercises, reading books and learning guides.</p></div>
+        </section>
+        <div class="search-box resource-search">
+            <label for="guardianResourceSearch">Search by book, subject or grade</label>
+            <input id="guardianResourceSearch" data-search placeholder="Try Mathematics or Grade 7">
+        </div>
+        <div class="cards" aria-live="polite"></div>
+    </div>
+</main>
+<script src="js/script.js"></script>
+</body>
+</html>

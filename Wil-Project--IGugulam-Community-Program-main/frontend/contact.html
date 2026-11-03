@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact iGugulam</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="auth-page">
+    <a href="index.html" class="back-btn">&lt; Back</a>
+    <main class="auth-card">
+        <h1>Contact iGugulam</h1>
+        <p>Send a message to the community program team.</p>
+        <form id="contactRequestForm">
+            <div class="auth-field">
+                <label for="contactName">Name</label>
+                <input id="contactName" name="name" required maxlength="255">
+            </div>
+            <div class="auth-field">
+                <label for="contactEmail">Email</label>
+                <input id="contactEmail" name="email" type="email" required maxlength="255">
+            </div>
+            <div class="auth-field">
+                <label for="contactSubject">Subject</label>
+                <input id="contactSubject" name="subject" required maxlength="255">
+            </div>
+            <div class="auth-field">
+                <label for="contactMessage">Message</label>
+                <textarea id="contactMessage" name="message" required rows="5"></textarea>
+            </div>
+            <button class="auth-btn" type="submit">Send message</button>
+            <p id="contactRequestStatus" role="status" aria-live="polite"></p>
+        </form>
+    </main>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>

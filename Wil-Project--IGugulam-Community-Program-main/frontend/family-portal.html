@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iGugulam - Student &amp; Guardian Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="auth-page family-auth-page">
+    <section class="auth-card family-auth-card">
+        <a href="index.html" class="family-back-link">&larr; Choose portal</a>
+        <div class="auth-logo" aria-hidden="true">📚</div>
+        <p class="portal-eyebrow">iGugulam Community Programme</p>
+        <h1>Student &amp; Guardian Portal</h1>
+        <p class="family-auth-intro">For students in Grades 4–12 and the adults who support them.</p>
+
+        <div class="family-auth-selectors">
+            <fieldset class="family-selector">
+                <legend>Who are you?</legend>
+                <label><input type="radio" name="familyRole" value="LEARNER" checked> Student</label>
+                <label><input type="radio" name="familyRole" value="GUARDIAN"> Parent / guardian</label>
+            </fieldset>
+            <div class="family-selector family-mode-selector" aria-label="Choose an account action">
+                <button type="button" class="family-mode-button active" data-family-mode="login" aria-pressed="true">Log in</button>
+                <button type="button" class="family-mode-button" data-family-mode="signup" aria-pressed="false">Sign up</button>
+            </div>
+        </div>
+
+        <form id="familyLoginForm" class="family-form">
+            <div class="auth-field">
+                <label for="familyLoginUsername">Username</label>
+                <input id="familyLoginUsername" autocomplete="username" required>
+            </div>
+            <div class="auth-field">
+                <label for="familyLoginPassword">Password</label>
+                <input id="familyLoginPassword" type="password" autocomplete="current-password" required>
+            </div>
+            <button class="auth-btn" type="submit">Log in</button>
+            <p id="familyLoginError" class="auth-error" role="alert"></p>
+        </form>
+
+        <form id="familySignupForm" class="family-form" hidden>
+            <div class="auth-field">
+                <label for="familyFullName" id="familyFullNameLabel">Student full name</label>
+                <input id="familyFullName" autocomplete="name" required>
+            </div>
+            <div class="auth-field">
+                <label for="familyEmail">Email address</label>
+                <input id="familyEmail" type="email" autocomplete="email" required>
+            </div>
+            <div class="auth-field">
+                <label for="familyPhone">Phone number</label>
+                <input id="familyPhone" type="tel" autocomplete="tel" required>
+            </div>
+            <div class="auth-field">
+                <label for="familyGrade" id="familyGradeLabel">Your school grade</label>
+                <select id="familyGrade" required>
+                    <option value="">Choose a grade</option>
+                    <option value="4">Grade 4</option>
+                    <option value="5">Grade 5</option>
+                    <option value="6">Grade 6</option>
+                    <option value="7">Grade 7</option>
+                    <option value="8">Grade 8</option>
+                    <option value="9">Grade 9</option>
+                    <option value="10">Grade 10</option>
+                    <option value="11">Grade 11</option>
+                    <option value="12">Grade 12</option>
+                </select>
+            </div>
+            <fieldset class="subject-choice-fieldset">
+                <legend id="familySubjectsLegend">Choose subjects you want help with</legend>
+                <p class="subject-choice-hint">Select all that apply. Choices are based on the selected grade.</p>
+                <div id="familySubjectChoices" class="subject-choice-list"></div>
+            </fieldset>
+            <p id="familySubjectsError" class="auth-error" role="alert"></p>
+            <div id="guardianLearnerFields" hidden>
+                <h2 class="form-section-title">Learner details</h2>
+                <div class="auth-field">
+                    <label for="familyLearnerName">Learner full name</label>
+                    <input id="familyLearnerName">
+                </div>
+                <div class="auth-field">
+                    <label for="familyEmergency">Learner emergency contact</label>
+                    <input id="familyEmergency" type="tel">
+                </div>
+                <div class="auth-field">
+                    <label for="familyRelationship">Your relationship to the learner</label>
+                    <input id="familyRelationship" placeholder="For example, parent or caregiver">
+                </div>
+            </div>
+            <div class="auth-field">
+                <label for="familySignupUsername">Choose a username</label>
+                <input id="familySignupUsername" autocomplete="username" required>
+            </div>
+            <div class="auth-field">
+                <label for="familySignupPassword">Choose a password</label>
+                <input id="familySignupPassword" type="password" autocomplete="new-password" minlength="8" required>
+                <small>Use at least 8 characters.</small>
+            </div>
+            <button class="auth-btn" type="submit">Create account</button>
+            <p id="familySignupError" class="auth-error" role="alert"></p>
+        </form>
+    </section>
+</main>
+<script src="js/script.js"></script>
+</body>
+</html>
